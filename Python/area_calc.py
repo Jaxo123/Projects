@@ -1,6 +1,17 @@
 from math import *
 from time import *
 
+def trapazoid(base1, base2, height):
+    area_trap = 0
+    if base1 < 0 or base2 < 0:
+        print "One or both base lengths are invalid."
+        return
+    elif height < 0:
+        print "Height is invalid"
+        return
+    else:
+        area_trap += (base1 + base2)/2
+        return area_trap
 
 def rectangle(length, width):
     area_rect = 0
@@ -37,10 +48,13 @@ def n_gon(side, apothem, n_sides):
     perim_gon = 0
     if side < 0:
         print "Side length is invalid"
+        return
     elif apothem < 0:
         print "Apothem length is invalid."
+        return
     elif n_sides < 3:
         print "Number of sides is invalid."
+        return
     else:
         perim_gon += side * n_sides
         area_gon += (perim_gon * apothem) / 2
@@ -51,7 +65,7 @@ def main_func():
     while run is True:
         print "Select an option..."
         sleep(1)
-        user_input = raw_input("1: regular polygon, 2: triangle, 3: parallelogram, 4: circle, X: quit... ")
+        user_input = raw_input("1: regular polygon, 2: triangle, 3: parallelogram, 4: circle, 5: trapazoid, X: quit... ")
         if user_input == "3":
             length = int(raw_input("What is the rectangle's length? "))
             width = int(raw_input("What is the rectangle's width? "))
@@ -68,6 +82,11 @@ def main_func():
             apothem = int(raw_input("What is the polygon's apothem? "))
             n_sides = int(raw_input("How many sides does the polygon have? "))
             print n_gon(side, apothem, n_sides)
+        elif user_input == "5":
+            base1 = int(raw_input("What is the length of one of the bases? "))
+            base2 = int(raw_input("what is the length of the other base? "))
+            height = int(raw_input("What is the trapazoid's height? "))
+            print trapazoid(base1, base2, height)
         elif user_input.upper() == "X":
             run = False
 
