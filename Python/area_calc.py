@@ -10,7 +10,7 @@ def trapezoid(base1, base2, height):
         print "Height is invalid"
         return
     else:
-        area_trap += (base1 + base2)/2
+        area_trap += ((base1 + base2)/2)*height
         return area_trap
 
 def rectangle(length, width):
