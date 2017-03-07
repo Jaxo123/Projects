@@ -1,7 +1,7 @@
 from math import *
 from time import *
 
-def trapazoid(base1, base2, height):
+def trapezoid(base1, base2, height):
     area_trap = 0
     if base1 < 0 or base2 < 0:
         print "One or both base lengths are invalid."
@@ -65,7 +65,7 @@ def main_func():
     while run is True:
         print "Select an option..."
         sleep(1)
-        user_input = raw_input("1: regular polygon, 2: triangle, 3: parallelogram, 4: circle, 5: trapazoid, X: quit... ")
+        user_input = raw_input("1: regular polygon, 2: triangle, 3: parallelogram, 4: circle, 5: trapezoid, X: quit... ")
         if user_input == "3":
             length = int(raw_input("What is the rectangle's length? "))
             width = int(raw_input("What is the rectangle's width? "))
@@ -86,7 +86,7 @@ def main_func():
             base1 = int(raw_input("What is the length of one of the bases? "))
             base2 = int(raw_input("what is the length of the other base? "))
             height = int(raw_input("What is the trapazoid's height? "))
-            print trapazoid(base1, base2, height)
+            print trapezoid(base1, base2, height)
         elif user_input.upper() == "X":
             run = False
 
